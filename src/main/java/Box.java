@@ -11,9 +11,10 @@ public class Box {
         for (double wallHeight = 0; wallHeight < min / 2; wallHeight += 1) {
             double currentVolume = wallHeight * (length - 2 * wallHeight) * (width - 2 * wallHeight);
             if (currentVolume > volume) {
+                volume = currentVolume;
                 approximateHeight = wallHeight;
             }
-    }
+        }
 
         for (double wallHeight = approximateHeight - 1; wallHeight < approximateHeight + 1; wallHeight += 0.001) {
             double currentVolume = wallHeight * (length - 2 * wallHeight) * (width - 2 * wallHeight);
